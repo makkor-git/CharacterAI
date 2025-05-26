@@ -123,7 +123,7 @@ class UserAccount(BaseModel, Avatar):
     avatar_type: str
     onboarding_complete: bool
     avatar_file_name: str
-    mobile_onboarding_complete: int
+    mobile_onboarding_complete: Optional[int] = None
 
 class User(BaseModel):
     """Object in chat
@@ -271,7 +271,7 @@ class NewChat(BaseModel):
     last_interaction: datetime
     type: str
     description: str
-    speech: str
+    speech: Optional[str] = None
     status: str
     has_more: bool
     messages: List[Messages]
